@@ -1,0 +1,27 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "📄 新規レポート作成",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        ".system/scripts/new_report.sh", 
+        "${input:folderName}"
+      ],
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    }
+  ],
+  "inputs": [
+    {
+      "id": "folderName",
+      "type": "promptString",
+      "description": "作成するフォルダ名を入力してください",
+      "default": "assignment_new"
+    }
+  ]
+}

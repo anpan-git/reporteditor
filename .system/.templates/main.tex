@@ -1,0 +1,46 @@
+% LuaLaTeX用の設定
+\documentclass[a4paper,11pt]{ltjsarticle}
+
+% --- パッケージ ---
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb}
+\usepackage{bm}
+\usepackage{url}
+
+% --- タイトル情報 ---
+\title{第1回 レポート課題}
+\author{氏名：安藤 太郎 \\ 学籍番号：XXXXXXXX}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+
+\section{はじめに}
+これは新規レポート作成スクリプトを実行すると生成されるテンプレートファイルです
+
+\section{作り方}
+名前は変えてもらうと入力が楽。その授業の形式にあった段落構成にしておくと便利だと思う。
+
+\section{引用の方法}
+参考にした本とか研究があったら書いておくとかっこいいレポートになる
+本文中で引用するには、このように書きます\cite{book1}。
+複数の文献がある場合も同様です\cite{paper1}。
+
+\section{おわりに}
+レポートの最後に `thebibliography` 環境を作ることで、自動的に「参考文献」という見出しとともにリストが表示されます。
+
+% --- 参考文献（直接入力方式） ---
+% {99} は「最大99個まで書く」というおまじないです。
+\begin{thebibliography}{99}
+
+    \bibitem{book1} 
+    安藤 崇央, 『ほげほげ学入門』, ほげほげ評論社, 2026.
+
+    \bibitem{paper1} 
+    長島 史苑, 「ふがふがの研究について」, ふがふが学会論文誌, Vol.10, pp.1-5, 2024.
+
+\end{thebibliography}
+
+\end{document}

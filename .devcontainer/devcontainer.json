@@ -1,0 +1,15 @@
+{
+  "name": "LaTeX Multi-Report Container",
+  "build": { "dockerfile": "Dockerfile" },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "James-Yu.latex-workshop",
+        "streetsidesoftware.code-spell-checker",
+        "seatonjiang.gitmoji-vscode",
+        "actboy168.tasks"
+      ]
+    }
+  },
+  "postCreateCommand": "chmod +x .system/scripts/new_report.sh && echo \"alias gen='/workspaces/${localWorkspaceFolderBasename}/.system/scripts/new_report.sh'\" >> ~/.bashrc"
+}

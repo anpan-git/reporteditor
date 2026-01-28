@@ -1,0 +1,61 @@
+{
+  // --- LaTeX Workshop の設定 ---
+  // サブディレクトリ管理（マルチレポート）に対応した出力先設定
+  "latex-workshop.latex.outDir": "%DIR%/out",
+  "latex-workshop.latex.rootFile.strategy": "active",
+  "latex-workshop.latex.rootFile.doNotPrompt": true,
+
+  // 自動クリーンアップ設定（SyncTeX用の地図ファイルを保護）
+  "latex-workshop.latex.autoClean.run": "onBuilt",
+  "latex-workshop.latex.clean.method": "glob",
+  "latex-workshop.latex.clean.fileTypes": [
+    "*.aux", "*.bbl", "*.blg", "*.idx", "*.ind", "*.lof", "*.lot",
+    "*.out", "*.toc", "*.acn", "*.acr", "*.alg", "*.glg", "*.glo",
+    "*.gls", "*.ist", "*.fls", "*.log", "*.fdb_latexmk", "*.snm",
+    "*.nav", "*.dvi", "*.synctex(busy)"
+  ],
+
+  // SyncTeX（エディタとPDFの同期）の設定
+  "latex-workshop.view.pdf.viewer": "tab",
+  "latex-workshop.view.pdf.syncViewer.onScroll.enabled": true,
+  "latex-workshop.view.pdf.syncViewer.onBuild.enabled": true,
+  "latex-workshop.view.pdf.syncViewer.afterEditText.enabled": true,
+
+  // ビルドツール（LuaLaTeX + サブディレクトリ検索対応）
+  "latex-workshop.latex.tools": [
+    {
+      "name": "latexmk_lualatex",
+      "command": "latexmk",
+      "args": [
+        "-r",
+        "%WORKSPACE_FOLDER%/.system/latexmkrc",
+        "-cd",             // サブディレクトリ内のファイルを正しく処理するために必須
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "-pdflua",
+        "-outdir=%OUTDIR%",
+        "%DOC%"
+      ],
+      "env": {
+        "BSTINPUTS": ".:%DIR%:%WORKSPACE%:",
+        "BIBINPUTS": ".:%DIR%:%WORKSPACE%:"
+      }
+    }
+  ],
+
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "Build with LuaLaTeX",
+      "tools": [ "latexmk_lualatex" ]
+    }
+  ],
+
+  "latex-workshop.intellisense.package.enabled": true,
+  "latex-workshop.formatting.latex": "latexindent",
+
+  // エディタの書式設定
+  "[tex]": { "editor.tabSize": 2 },
+  "[latex]": { "editor.tabSize": 2 },
+  "[bibtex]": { "editor.tabSize": 2 }
+}
